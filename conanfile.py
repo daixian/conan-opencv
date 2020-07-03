@@ -457,6 +457,11 @@ class OpenCVConan(ConanFile):
             patch_file=os.path.join("patches", "0003-OpenJPEG-fixed-compilation-and-warnings-with-VS.patch"))
         tools.patch(base_path=self._source_subfolder,
             patch_file=os.path.join("patches", "0004-add-protobuf-dependencies.patch"))
+        # FREETYPE_LIBRARIES will be cleared when run ocv_check_modules()
+        if self.options.contrib and self.options.freetype and \
+            self.settings.os == "Windows" and self.options.shared:
+            tools.patch(base_path='contrib',
+                patch_file=os.path.join("patches", "0001-contrib-freetype_no_check_modles.patch"))
 
         cmake = self._configure_cmake()
         cmake.build()

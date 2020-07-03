@@ -1,0 +1,32 @@
+From f83b170f1778892a378077a165eae86736559424 Mon Sep 17 00:00:00 2001
+From: daixian <amano_tooko@qq.com>
+Date: Fri, 3 Jul 2020 15:01:18 +0800
+Subject: [PATCH] =?UTF-8?q?=E5=8E=BB=E6=8E=89check=5Fmodles,=E5=AE=83?=
+ =?UTF-8?q?=E5=8F=AF=E8=83=BD=E5=AF=BC=E8=87=B4=E4=BA=86=E5=BA=93=E7=9B=AE?=
+ =?UTF-8?q?=E5=BD=95=E8=AE=BE=E7=BD=AE=E7=9A=84=E6=B8=85=E7=A9=BA?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+---
+ modules/freetype/CMakeLists.txt | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/modules/freetype/CMakeLists.txt b/modules/freetype/CMakeLists.txt
+index 6dd4aaf..c4ed823 100644
+--- a/modules/freetype/CMakeLists.txt
++++ b/modules/freetype/CMakeLists.txt
+@@ -3,8 +3,8 @@ if(APPLE_FRAMEWORK)
+   ocv_module_disable(freetype)
+ endif()
+ 
+-ocv_check_modules(FREETYPE freetype2)
+-ocv_check_modules(HARFBUZZ harfbuzz)
++# ocv_check_modules(FREETYPE freetype2)
++# ocv_check_modules(HARFBUZZ harfbuzz)
+ 
+ if(OPENCV_INITIAL_PASS)
+   if(NOT FREETYPE_FOUND)
+-- 
+2.22.0.windows.1
+
